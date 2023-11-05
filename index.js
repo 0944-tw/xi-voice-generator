@@ -80,4 +80,5 @@ app.get("/generate",async (req,res) => {
 
 })
 app.use("/vocals",express.static("temp"))
+app.use("/",express.static("public"))
 app.listen(3000)
