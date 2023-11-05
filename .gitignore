@@ -2,3 +2,5 @@ voicebank
 node_modules
 package-lock.json
 temp
+node_modules.zip
+*.zip
