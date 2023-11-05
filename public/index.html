@@ -10,13 +10,14 @@
 </head>
 
 <body>
-    <header class="text-center text-white masthead" style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
+    <header class="text-center text-white masthead" style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover; height: 100vh;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <script>
 
-                    function onClick() {
+                    function onClick(event) {
+                    
                      console.log("Requesting")
                      let xhr = new XMLHttpRequest();
                      xhr.open("GET","./generate?name=" + document.getElementById("query").value);
@@ -33,12 +34,12 @@
                     <h1 class="mb-5">主席語音生成器 2.0</h1><audio controls=""></audio>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
-                    <form>
+                   
                         <div class="row">
                             <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" id="query" placeholder="安排"></div>
-                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" onclick="onClick">生成</button></div>
+                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" onclick="onClick()">生成</button></div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>

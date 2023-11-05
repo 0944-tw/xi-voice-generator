@@ -4,6 +4,9 @@ var app = express()
 var wav = require("wav-concat")
 
 app.get("/generate",async (req,res) => {
+    // set csrf header
+    res.header("Access-Control-Allow-Origin","*")
+
     // get "name" parameter from request
     var name = req.query.name
     var removeTone = req.query.removeTone
@@ -76,6 +79,14 @@ app.get("/generate",async (req,res) => {
             missingFiles: missingFiles
         })
     })
+    setTimeout(() => {
+     // Delete File
+        fs.unlink("./temp/" + fileName,(err) => {
+            if (err){
+                console.log(err)
+            }
+        })
+    },15 * 1000)
 
 
 })
